@@ -15,17 +15,17 @@ Will be updated with notes soon.
 - For non sorted arrays this is how you will need to search.
 
 Javascript has built in linear search methods:
-    - indexOf()
-	- includes()
-	- find()
-    - findIndex()
+- indexOf()
+- includes()
+- find()
+- findIndex()
 
 **Big O**
 Best case: O(1)
-	- Find it right away
+- Find it right away
 Average: O(n)
 Worst case: O(n)
-    - Last or not found
+- Last or not found
 
 
 ## Leetcode Problems
