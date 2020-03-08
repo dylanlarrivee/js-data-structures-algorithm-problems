@@ -5,28 +5,16 @@ This is a collection of Javascript data structures, algorithms and leetcode prob
 ## Data Structures
 Will be updated with notes soon.
 
+1. Singly Linked List
+2. Doubly Linked List
+3. Stacks
+4. Queues
+
 ## Algorithms
 Will be updated with notes soon.
 
-### Searching Algorithms
-
-#### Linear Search
-- Start at the begining or end of an array and search all the way through until you find it.
-- For non sorted arrays this is how you will need to search.
-
-Javascript has built in linear search methods:
-- indexOf()
-- includes()
-- find()
-- findIndex()
-
-**Big O**
-Best case: O(1)
-- Find it right away
-Average: O(n)
-Worst case: O(n)
-- Last or not found
-
+Searching --> Link this to the searching readme
+Sorting --> Link this to the sorting readme
 
 ## Leetcode Problems
 Will be updated with notes soon.
