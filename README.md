@@ -8,6 +8,7 @@ Will be updated with notes soon.
 1. Singly Linked List
 2. Doubly Linked List
 3. [Stacks and Queues](https://github.com/dylanlarrivee/js-data-structures-algorithm-problems/tree/master/dataStructuresAlgorithms/stacks-queues)
+4. [Trees](https://github.com/dylanlarrivee/js-data-structures-algorithm-problems/tree/master/dataStructuresAlgorithms/trees)
 
 ## Algorithms
 Will be updated with notes soon.

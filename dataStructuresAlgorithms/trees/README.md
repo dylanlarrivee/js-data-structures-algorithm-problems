@@ -5,11 +5,17 @@ What: A data structure that consists of a node in a parent / child relationship.
 - Need to have one entry point (root node) and all the data must point down from them.##
 ## Terminology
 Root: The top node in a tree
+
 Child: A node directly connected to another node when moving away from the root
+
 Parent: The converse notion of a child
+
 Siblings: A group of nodes with the same parent
+
 Leaf: A node with no children
+
 Edge: The connection between one node and another
+
 ## Uses for Trees
 - HTML DOM
 - Network routing
