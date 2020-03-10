@@ -67,7 +67,9 @@ Search a binary tree to see if a value is in the tree
 		- If there is not, we are done searching.
 ## BST Big O
 Insertion: O(log n)
+
 Searching: O(log n)
+
 - This is a good time complexity
 - If you double the number of nodes you only increase the number of steps by 1.
 - Not guaranteed: If ever node is greater than its parent then it will be a 1 sided tree.
