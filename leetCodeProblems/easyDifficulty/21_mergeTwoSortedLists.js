@@ -11,7 +11,7 @@
 
 //https://www.youtube.com/watch?v=orCMI6WjoIw
 
-// Create a dummy node and then start adding the nodes from other list added in the order of lowsest it finds
+// Create a dummy node and then start adding the nodes from other list added in the order of lowsest it finds until one list runs out. Once that list runs out then you link the last node on that list to the next node on the remaining list. At the end return the dummyNode.next to skip that dummy value you have in place.
 
 /**
  * Definition for singly-linked list.

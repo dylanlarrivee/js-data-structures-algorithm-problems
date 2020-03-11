@@ -87,3 +87,78 @@ Remove from beginning of the list
 Only want to use this for insertion and deletion. For searching and access use something else.
 ### Recap
 FIFO data structure. First thing in is the first thing out.
+
+
+## Code 
+`class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+class Stack {
+    constructor() {
+        this.first = null;
+        this.last = null;
+        this.size = 0;
+    }
+    push(val) {
+        var newNode = new Node(val);
+        if (!this.first) {
+            this.first = newNode;
+            this.last = newNode;
+        } else {
+            var tempFirst = this.first;
+            this.first = newNode;
+            newNode.next = tempFirst;
+        }
+        this.length++
+        return this.size
+    }
+    pop() {
+        if (!this.first) return null;
+        var temp = this.first
+        if (this.first === this.last) {
+            this.last = null;
+        } 
+        this.first = this.first.next;
+        this.size--;
+        return temp.val
+    }
+
+}
+
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+  enqueue(val){
+    var newNode = new Node(val);
+    if (!this.first){
+        this.first = newNode;
+        this.last = newNode;
+    } else {
+        this.last.next = newNode;
+        this.last = newNode;
+    }
+    this.size++;
+    return this.size;
+  }
+  dequeue(val){
+    if(!this.first) return null;
+    var tempFirst = this.first;
+    if(this.size === 1) {
+        this.first = null;
+        this.last = null;
+    } else {
+        this.first = tempFirst.next;
+        this.first.next = null;
+    }
+    this.size--;
+    return tempFirst.val
+  }
+}
+`
