@@ -90,7 +90,8 @@ FIFO data structure. First thing in is the first thing out.
 
 
 ## Code 
-`class Node {
+```javascript
+class Node {
   constructor(val) {
     this.val = val;
     this.next = null;
@@ -161,4 +162,4 @@ class Queue {
     return tempFirst.val
   }
 }
-`
+```
