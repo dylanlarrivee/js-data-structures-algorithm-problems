@@ -1,36 +1,37 @@
+// https://leetcode.com/problemset/all/?difficulty=Easy
+
 
 // let arr = [0,1,2,3]
 // console.log(arr);
 // arr.splice(1,0,99);
-// console.log(arr);
+// console.log(arr);`
 
+// Starting from the last place of the shorter string, compare the 2 values. If they are both 1 then make zero and add a 
 
-let nums = [-2,1,-3,4,-1,2,1,-5,4]
+let digits = [6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]
 
 /**
  * @param {number[]} nums
  * @return {number}
  */
-var maxSubArray = function(nums) {
-    let maxSum = -Infinity;
-    let maxArr = [];
-    if (nums.length == 1) return nums[0];
-    for (let i=0; i<nums.length; i++) {
-        let tempArr = [nums[i]];
-        let tempSum = nums[i];
-        for (let j=i+1; j<nums.length; j++) {
-            console.log(tempArr);
-            console.log(tempSum);
-            tempSum += nums[j];
-            if (tempSum > maxSum) {
-                maxSum = tempSum
-                maxArr = tempArr
-            } 
-            tempArr.push(nums[j]);
-        }
-    }
-    return maxSum
+
+let a =       "11"
+let b  =      "1"
+let answer = "10101"
+
+debugger;
+let x = 8;
+var mySqrt = function(x) {
+   let totalSquareValue = Math.sqrt(x);
+   let splitSquareValue = totalSquareValue.toString().split(".");
+   return Number(splitSquareValue[0]);
+   // if (totalSquareValue.toString().includes(".")) {
+   //    let splitSquareValue = totalSquareValue.split(".");
+   //    return splitSquareValue[0];
+   // } else {
+   //    return totalSquareValue
+   // }
+   
 };
 
-
-maxSubArray(nums)
+mySqrt(x)
