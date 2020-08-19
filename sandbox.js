@@ -18,20 +18,22 @@ let digits = [6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]
 let a =       "11"
 let b  =      "1"
 let answer = "10101"
+let n = 2 
 
 debugger;
 let x = 8;
-var mySqrt = function(x) {
-   let totalSquareValue = Math.sqrt(x);
-   let splitSquareValue = totalSquareValue.toString().split(".");
-   return Number(splitSquareValue[0]);
-   // if (totalSquareValue.toString().includes(".")) {
-   //    let splitSquareValue = totalSquareValue.split(".");
-   //    return splitSquareValue[0];
-   // } else {
-   //    return totalSquareValue
-   // }
+var climbStairs = function(n) {
+   let stepsArr = [...Array(n).keys()]
+   stepsArr[0] = 1
+   stepsArr[1] = 1
+   stepsArr[2] = 2
    
+   for (let i=0; i<stepsArr.length; i++) {
+      // Fibonacci sequence.
+      // F(i) = F(i-1) + F(i-2)
+      stepsArr[i] = stepsArr[i-1] + stepsArr[i-2]
+   }
+   return stepsArr[n]
 };
 
-mySqrt(x)
+climbStairs(n)
