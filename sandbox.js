@@ -27,8 +27,8 @@ var climbStairs = function(n) {
    stepsArr[0] = 1
    stepsArr[1] = 1
    stepsArr[2] = 2
-   
-   for (let i=0; i<stepsArr.length; i++) {
+
+   for (let i=3; i<=stepsArr.length; i++) {
       // Fibonacci sequence.
       // F(i) = F(i-1) + F(i-2)
       stepsArr[i] = stepsArr[i-1] + stepsArr[i-2]
