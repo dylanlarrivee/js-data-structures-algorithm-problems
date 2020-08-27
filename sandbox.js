@@ -19,21 +19,18 @@ let a =       "11"
 let b  =      "1"
 let answer = "10101"
 let n = 2 
+let nums = [0,0,1,1,1,2,2,3,3,4]
 
-debugger;
-let x = 8;
-var climbStairs = function(n) {
-   let stepsArr = [...Array(n).keys()]
-   stepsArr[0] = 1
-   stepsArr[1] = 1
-   stepsArr[2] = 2
-
-   for (let i=3; i<=stepsArr.length; i++) {
-      // Fibonacci sequence.
-      // F(i) = F(i-1) + F(i-2)
-      stepsArr[i] = stepsArr[i-1] + stepsArr[i-2]
+// debugger;
+var removeDuplicates = function(nums) {
+   for (let i=1; i<nums.length; i++) {
+       console.log(nums[i])
+       if (nums[i] === nums[i-1]) {
+           nums.splice(i,1);
+           i--
+       }
+       return nums.length
    }
-   return stepsArr[n]
 };
 
-climbStairs(n)
+removeDuplicates(nums)
