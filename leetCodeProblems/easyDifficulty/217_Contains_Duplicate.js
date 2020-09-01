@@ -22,11 +22,23 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate = function(nums) {
-    let map = new Map()
-    for (let i=0; i<nums.length; i++) {
-        if (map.has(nums[i])) return true
-        map.set(nums[i], i)
+
+ //  Hash map example
+ 
+var singleNumber = function(nums) {
+    let map = new Map();
+    for (i=0; i<nums.length; i++) {
+        if (map.has(nums[i])) {
+            let newAmt = map.get(nums[i]) + 1
+            map.set(nums[i], newAmt)
+        } else {
+            map.set(nums[i], 1)
+        }  
     }
-    return false
+    console.log(map)
+    for (let [key, val] of map) {
+        if (val === 1) {
+            return key;
+        }
+    }
 };
