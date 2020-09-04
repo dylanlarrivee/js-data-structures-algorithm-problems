@@ -1,21 +1,3 @@
-
-// const decksOfCards = function(cardsArr) {
-//     // 
-//     let map = new Map()
-
-//     for (let i=0; i<cardsArr.length; i++) {
-//         if (map.has(cardsArr[i])) {
-//             let cardAmount = map.get(cardsArr[i])
-//             map.set(cardsArr[i], cardAmount + 1)            
-//         } else {
-//             map.set(cardsArr[i], 1)
-//         }
-//     }
-
-//     if (map.size !== 52) return 0
-    
-    
-// }
 [ 'd', 'e', 'd', 'n', 'a', 'l', ' ', 's', 'a', 'h', ' ', 'e', 'l', 'g', 'a', 'e', ' ', 'e', 'h', 't' ];
 
 
