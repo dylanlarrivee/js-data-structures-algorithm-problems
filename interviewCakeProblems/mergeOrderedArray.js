@@ -1,22 +1,4 @@
 
-// const decksOfCards = function(cardsArr) {
-//     // 
-//     let map = new Map()
-
-//     for (let i=0; i<cardsArr.length; i++) {
-//         if (map.has(cardsArr[i])) {
-//             let cardAmount = map.get(cardsArr[i])
-//             map.set(cardsArr[i], cardAmount + 1)            
-//         } else {
-//             map.set(cardsArr[i], 1)
-//         }
-//     }
-
-//     if (map.size !== 52) return 0
-    
-    
-// }
-
 const myArray = [3, 4, 6, 10, 11, 15];
 const alicesArray = [1, 5, 8, 12, 14, 19];
 
