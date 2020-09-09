@@ -14,61 +14,52 @@
 
 //     if (map.size !== 52) return 0
     
-    
-// }
+let wordString =   "Add milk and eggs, then add flour and sugar."
 
-const myArray = [3, 4, 6, 10, 11, 15];
-const alicesArray = [1, 5, 8, 12, 14, 19];
-
-const mergeArrays = function (myArray, alicesArray) {
-  let totalength = (myArray.length + alicesArray.length) - 1;
-
-  let myArrayPointer = 0;
-  let alicesArrayPointer = 0;
-  let combinedArr = [];
-
-  for (let i = 0; i <= totalength; i++) {
-     if (alicesArrayPointer > alicesArray.length ||  myArray[myArrayPointer] <= alicesArray[alicesArrayPointer]) {
-      combinedArr.push(myArray[myArrayPointer]);
-      myArrayPointer++;
-    } else {
-      combinedArr.push(alicesArray[alicesArrayPointer]);
-      alicesArrayPointer++;
-    }
+function isLetter(character) {
+    return 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.indexOf(character) >= 0;
   }
 
-  return combinedArr;
-};
+  // create a function that takes a string and separates it by each word
 
-// const mergeArrays = function (myArray, alicesArray) {
-//     let longest
+function splitWords(wordString) {
+    let wordStart = 0
+    let wordLength = 0
+    let wordsArr = []
+    let map = new Map()
 
-//     if (myArray.length>alicesArray.length) {
-//         longest=myArray.length 
-//     } else {
-//         longest=alicesArray.length
-//     }
+    for (let i=0;i<wordString.length;i++) {
+        let currCharacter = wordString[i]
+        if (isLetter(currCharacter) && i<wordString.length-1) {
+            wordLength++
+        } else {
+            if (wordLength !==0) {
+               // wordsArr.push(wordString.slice(wordStart, wordStart + wordLength))
+               let word = wordString.slice(wordStart, wordStart + wordLength)
+               let wordLower = word.toLowerCase();
+               let wordCapitalized = word.charAt(0).toUpperCase() + word.slice(1)
 
-//     let i = 0
-//     let j =0 
-//     let combinedArr = []
-    
-//     for (i=0;i<longest;i++) {
-//         if (!alicesArray[j]) {
-//             combinedArr.push(myArray[i])
-//         }
-//         else if (myArray[i] <= alicesArray[j]) {
-//             combinedArr.push(myArray[i])
-//         } else {
-//             combinedArr.push(alicesArray[j])
-//             j++
-//             i--
-//         }
-//     }
-//     return combinedArr
+               if (map.has(word)) {
+                 map.set(word, map.get(word) + 1);
+               } else if (map.has(wordLower)) {
+                 map.set(wordLower, map.get(wordLower) + 1);
+               } else if (map.has(wordCapitalized)) {
+                 map.set(wordLower, map.get(wordCapitalized) + 1);
+                 map.delete(wordCapitalized);
+               } else {
+                map.set(word, 1);
+               } 
+            }
+            wordStart = i +1
+            wordLength = 0
+        }
+    }
+    return map
+}
+
+// const wordMapMaker = function() {
+
 // }
 
 
-
-console.log(mergeArrays(myArray, alicesArray));
-// logs [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
+console.log(splitWords(wordString))
