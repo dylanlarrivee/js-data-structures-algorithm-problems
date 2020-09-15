@@ -14,52 +14,24 @@
 
 //     if (map.size !== 52) return 0
     
-let wordString =   "Add milk and eggs, then add flour and sugar."
+const stockPrices = [10, 8, 8, 8, 7, 4];
 
-function isLetter(character) {
-    return 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.indexOf(character) >= 0;
-  }
+function getMaxProfit(stockPrices) {
+  let maxProfit = stockPrices[1] - stockPrices[0];
+  let tempProfit = 0;
 
-  // create a function that takes a string and separates it by each word
-
-function splitWords(wordString) {
-    let wordStart = 0
-    let wordLength = 0
-    let wordsArr = []
-    let map = new Map()
-
-    for (let i=0;i<wordString.length;i++) {
-        let currCharacter = wordString[i]
-        if (isLetter(currCharacter) && i<wordString.length-1) {
-            wordLength++
-        } else {
-            if (wordLength !==0) {
-               // wordsArr.push(wordString.slice(wordStart, wordStart + wordLength))
-               let word = wordString.slice(wordStart, wordStart + wordLength)
-               let wordLower = word.toLowerCase();
-               let wordCapitalized = word.charAt(0).toUpperCase() + word.slice(1)
-
-               if (map.has(word)) {
-                 map.set(word, map.get(word) + 1);
-               } else if (map.has(wordLower)) {
-                 map.set(wordLower, map.get(wordLower) + 1);
-               } else if (map.has(wordCapitalized)) {
-                 map.set(wordLower, map.get(wordCapitalized) + 1);
-                 map.delete(wordCapitalized);
-               } else {
-                map.set(word, 1);
-               } 
-            }
-            wordStart = i +1
-            wordLength = 0
-        }
+  for (let i=1;i<stockPrices.length;i++) {
+    if (stockPrices[i] >= stockPrices[i-1]) {
+      tempProfit = tempProfit + (stockPrices[i] - stockPrices[i-1])
+      if (tempProfit > maxProfit) {
+        maxProfit = tempProfit
+      }
+    } else {
+      tempProfit = 0
     }
-    return map
+  }
+return maxProfit
 }
 
-// const wordMapMaker = function() {
-
-// }
-
-
-console.log(splitWords(wordString))
+console.log(getMaxProfit(stockPrices));
+// Returns 6 (buying for $5 and selling for $11)

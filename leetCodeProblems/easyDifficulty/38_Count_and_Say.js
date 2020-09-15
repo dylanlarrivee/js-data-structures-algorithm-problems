@@ -28,3 +28,32 @@
 // Input: 4
 // Output: "1211"
 // Explanation: For n = 3 the term was "21" in which we have two groups "2" and "1", "2" can be read as "12" which means frequency = 1 and value = 2, the same way "1" is read as "11", so the answer is the concatenation of "12" and "11" which is "1211".
+
+1.     1
+2.     11
+3.     21
+4.     1211
+5.     111221
+
+/**
+ * @param {number} n
+ * @return {string}
+ */
+var countAndSay = function(n) {
+    
+    let str = 1
+    let j = 0
+
+    function getSeq(str) {
+        while (j<n) {
+            for (let i=0;i<n.length;i++) {
+                
+                str = 
+            }
+        }
+        return
+    }
+
+    
+
+};
