@@ -14,24 +14,29 @@
 
 //     if (map.size !== 52) return 0
     
-const stockPrices = [10, 8, 8, 8, 7, 4];
+let dineOutOrders = [17, 8, 24]
+let dineInOrders = [12, 19, 2]
+let servedOrders = [17, 8, 12, 19, 24, 2]
 
-function getMaxProfit(stockPrices) {
-  let maxProfit = stockPrices[1] - stockPrices[0];
-  let tempProfit = 0;
+const servedInOrderCheck = function (
+  dineOutOrders,
+  dineInOrders,
+  servedOrders
+) {
+  let dineOutOrdersPointer = 0;
+  let dineInOrdersPointer = 0;
+  let totalOrders = dineOutOrders.length + dineInOrders.length;
 
-  for (let i=1;i<stockPrices.length;i++) {
-    if (stockPrices[i] >= stockPrices[i-1]) {
-      tempProfit = tempProfit + (stockPrices[i] - stockPrices[i-1])
-      if (tempProfit > maxProfit) {
-        maxProfit = tempProfit
-      }
+  for (let i = 0; i < totalOrders; i++) {
+    if (dineOutOrders[dineOutOrdersPointer] == servedOrders[i]) {
+      dineOutOrdersPointer++;
+    } else if (dineInOrders[dineInOrdersPointer] == servedOrders[i]) {
+      dineInOrdersPointer++;
     } else {
-      tempProfit = 0
+      return false;
     }
   }
-return maxProfit
-}
+  return true;
+};
 
-console.log(getMaxProfit(stockPrices));
-// Returns 6 (buying for $5 and selling for $11)
+console.log(servedInOrderCheck(dineOutOrders,dineInOrders,servedOrders))
