@@ -131,40 +131,12 @@
 //     return inputString[currentLine++];
 // }
 
-let meetingsArray =   [
-  { startTime: 0,  endTime: 1 },
-  { startTime: 3,  endTime: 5 },
-  { startTime: 4,  endTime: 8 },
-  { startTime: 10, endTime: 12 },
-  { startTime: 9,  endTime: 10 },
-]
+let domains = "google.mail.com"
+let domainsNum = domains.split(".").length
+console.log(domainsNum)
 
-const meetingTimes = function(meetingsArray) {
-meetingsArray.sort((a, b) => {
-  a.startTime - b.startTime;
-});
-
-// let totalMeetingTimes = [];
-for (let i = 1; i < meetingsArray.length; i++) {
-  // if the 2 times overlap, merge and push to new array
-  if (meetingsArray[i - 1].endTime > meetingsArray[i].startTime) {
-    //totalMeetingTimes.push({"startTime":meetingsArray[i-1].startTime, "endTime", meetingsArray[i].endTime})
-    // meetingsArray[i - 1].endTime = meetingsArray[i].endTime;
-
-    if (meetingsArray[i - 1].startTime > meetingsArray[i].startTime) {
-      meetingsArray[i - 1].startTime = meetingsArray[i].startTime;
-    }
-
-    if (meetingsArray[i].endTime > meetingsArray[i-1].endTime) {
-      meetingsArray[i - 1].endTime = meetingsArray[i].endTime;
-    }
-
-    meetingsArray.splice(i, 1);
-    i--;
-  }
+for (let i=0;i<domainsNum;i++) {
+  console.log("domains", domains)
+  domains = domains.slice(domains.indexOf(".") +1, domains.length)
 }
-return meetingsArray
-};
-
-console.log(meetingTimes(meetingsArray))
 
